@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://db4u00xvdlwpy"]
+
+[ext_resource type="Script" uid="uid://bowmr461ep40v" path="res://scripts/ui/joystick.gd" id="1_bo7gq"]
+[ext_resource type="Texture2D" uid="uid://666jt64rf141" path="res://assets/sprites/ui/joystick_circle_nub_c.png" id="2_x207l"]
+[ext_resource type="Texture2D" uid="uid://brwsi086ntnb5" path="res://assets/sprites/ui/button_circle.png" id="3_4gnrm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2sns6"]
+radius = 64.0
+
+[node name="Joystick" type="Area2D" unique_id=429933612]
+position = Vector2(128, 272)
+script = ExtResource("1_bo7gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=238981299]
+shape = SubResource("CircleShape2D_2sns6")
+
+[node name="circulo" type="Sprite2D" parent="." unique_id=1522536266]
+self_modulate = Color(0.737193, 0.7371929, 0.7371929, 0.7019608)
+scale = Vector2(2, 2)
+texture = ExtResource("2_x207l")
+
+[node name="punto" type="Sprite2D" parent="." unique_id=1933506539]
+modulate = Color(0.7427827, 0.7427827, 0.7427826, 0.883)
+texture = ExtResource("3_4gnrm")
