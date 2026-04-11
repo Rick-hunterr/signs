@@ -338,6 +338,8 @@ func _on_interactuar() -> void:
 		match datos["tipo"]:
 			"dialogo":
 				print(datos["texto"])
+			"mesaCuartoUma":
+				print(datos["texto"])
 				DialogueManager.show_dialogue_balloon(dialogo, 'start')
 			"puerta":
 				guardar_posicion(datos["destino"])

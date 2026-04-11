@@ -3,6 +3,7 @@ class_name DatosInteractuables
 const CUARTO_UMA: Dictionary = {
 	Vector2i(30, 19): {"tipo": "dialogo", "texto": "La cama de Uma. Tiene tres almohadas porque dos siempre terminan en el piso.", },
 	Vector2i(30, 18): {"tipo": "dialogo", "texto": "La cama de Uma. Tiene tres almohadas porque dos siempre terminan en el piso."},
+	Vector2i(20, 10): {"tipo": "mesaCuartoUma", "texto": "Mesa de estudio, no tengo tarea hoy."},
 	Vector2i(5, 32): {"tipo": "puerta", "destino": "res://scenes/world/sala.tscn"},
 	Vector2i(26, 22): {"tipo": "puerta", "destino": "res://scenes/world/CuartoUma.tscn"},
 }
