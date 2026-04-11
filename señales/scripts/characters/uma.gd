@@ -9,7 +9,7 @@ var joystick : Joystick = null
 @onready var audio_pasos = $AudioPasos
 
 
-var dialogo = preload("res://scripts/dialogue/cuartoUma.dialogue")
+var dialogoCuartoUma = preload("res://scripts/dialogue/cuartoUma.dialogue")
 
 var camera_pos: Vector2 = Vector2.ZERO
 const CAMERA_SPEED: float = 5.0
@@ -337,10 +337,9 @@ func _on_interactuar() -> void:
 		var datos = TILES_INTERACTUABLES[atlas_coords]
 		match datos["tipo"]:
 			"dialogo":
-				print(datos["texto"])
+				DialogueManager.show_dialogue_balloon(dialogoCuartoUma, 'startCama')
 			"mesaCuartoUma":
-				print(datos["texto"])
-				DialogueManager.show_dialogue_balloon(dialogo, 'start')
+				DialogueManager.show_dialogue_balloon(dialogoCuartoUma, 'startMesa')
 			"puerta":
 				guardar_posicion(datos["destino"])
 				Transition.play(datos["destino"])
