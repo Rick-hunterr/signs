@@ -19,8 +19,8 @@ run/main_scene="uid://dpveku8phk5v5"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/low_processor_mode=true
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="uid://b1wrrnxg8fj75"
 config/icon="uid://wwop4yx16iah"
+boot_splash/image="uid://b1wrrnxg8fj75"
 
 [audio]
 
