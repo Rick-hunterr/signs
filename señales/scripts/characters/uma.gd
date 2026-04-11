@@ -9,6 +9,8 @@ var joystick : Joystick = null
 @onready var audio_pasos = $AudioPasos
 
 
+var dialogo = preload("res://scripts/dialogue/cuartoUma.dialogue")
+
 var camera_pos: Vector2 = Vector2.ZERO
 const CAMERA_SPEED: float = 5.0
 
@@ -202,6 +204,7 @@ func set_direction(dir, anim, idle_anim):
 	update_raycast()
 
 func start_move():
+	
 	update_raycast()
 	ray.force_raycast_update()
 	if ray.is_colliding():
@@ -209,6 +212,9 @@ func start_move():
 		return
 	moving = true
 	target_position = position + direction * TILE_SIZE
+	if audio_pasos.stream != null:
+		pass
+		audio_pasos.play()
 
 func move_to_target(_delta):
 	var diff = target_position - position
@@ -220,8 +226,6 @@ func move_to_target(_delta):
 		velocity = Vector2.ZERO
 		Uma.position = Vector2.ZERO
 		quietAnimation()
-		if audio_pasos.stream != null:
-			audio_pasos.play()
 		_detectar_tile_actual()
 	else:
 		# Mover directo por position, redondeado a entero para evitar subpíxeles
@@ -307,6 +311,7 @@ func resetear_control() -> void:
 	direction = Vector2.ZERO
 
 func _on_interactuar() -> void:
+	
 	ray_interact.force_raycast_update()
 	if ray_interact.is_colliding():
 		var obj = ray_interact.get_collider()
@@ -333,6 +338,7 @@ func _on_interactuar() -> void:
 		match datos["tipo"]:
 			"dialogo":
 				print(datos["texto"])
+				DialogueManager.show_dialogue_balloon(dialogo, 'start')
 			"puerta":
 				guardar_posicion(datos["destino"])
 				Transition.play(datos["destino"])

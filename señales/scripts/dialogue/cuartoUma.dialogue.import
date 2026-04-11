@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ckhinw00ltjd1"
+path="res://.godot/imported/cuartoUma.dialogue-38a79b6ada5f626a16a8c3c7214b2d4a.tres"
+
+[deps]
+
+source_file="res://scripts/dialogue/cuartoUma.dialogue"
+dest_files=["res://.godot/imported/cuartoUma.dialogue-38a79b6ada5f626a16a8c3c7214b2d4a.tres"]
+
+[params]
+
+defaults=true
