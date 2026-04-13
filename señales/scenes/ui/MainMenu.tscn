@@ -31,13 +31,13 @@
 blend_mode = 1
 light_mode = 2
 
-[sub_resource type="Gradient" id="Gradient_0oadh"]
+[sub_resource type="Gradient" id="Gradient_ns3en"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.6135266)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ayd4e"]
-gradient = SubResource("Gradient_0oadh")
+gradient = SubResource("Gradient_ns3en")
 width = 128
 height = 128
 fill = 1

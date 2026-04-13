@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d4srkeg02ofd" path="res://assets/sprites/tilesets/interiorCasaUma.png" id="2_8wqq4"]
 [ext_resource type="PackedScene" uid="uid://b06wfxeyf2e0u" path="res://scenes/characters/Uma.tscn" id="3_md8e1"]
 [ext_resource type="PackedScene" uid="uid://dvbp2qisnaiqh" path="res://scenes/ui/GUI.tscn" id="4_epduf"]
+[ext_resource type="Texture2D" uid="uid://ty0g7sol5ba7" path="res://assets/sprites/ui/MainMenu (1)/spotlight_01_a.png" id="5_epduf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_md8e1"]
 texture = ExtResource("2_8wqq4")
@@ -312,6 +313,7 @@ texture_region_size = Vector2i(32, 32)
 18:9/0 = 0
 19:9/0 = 0
 20:9/0 = 0
+20:9/0/z_index = 1
 21:9/0 = 0
 22:9/0 = 0
 23:9/0 = 0
@@ -344,6 +346,7 @@ texture_region_size = Vector2i(32, 32)
 18:10/0 = 0
 19:10/0 = 0
 20:10/0 = 0
+20:10/0/z_index = 1
 21:10/0 = 0
 22:10/0 = 0
 23:10/0 = 0
@@ -2013,11 +2016,44 @@ tile_set = SubResource("TileSet_md8e1")
 collision_visibility_mode = 1
 
 [node name="Objetos" type="TileMapLayer" parent="." unique_id=2030644271]
-z_index = 5
-tile_map_data = PackedByteArray("AAARAAMAAAAeABIAAAARAAQAAAAeABMAAAAIAAYAAAAFACAAAAAIAAcAAAAFACAAAAAHAAYAAAAFACAAAAASAAcAAAAUAAoAAAASAAYAAAAUAAkAAAA=")
+tile_map_data = PackedByteArray("AAARAAMAAAAeABIAAAARAAQAAAAeABMAAAAIAAYAAAAFACAAAAAIAAcAAAAFACAAAAAHAAYAAAAFACAAAAASAAcAAAAUAAoAAAASAAYAAAAUAAkAAAAPAAMAAAAdABoAAAAPAAIAAAAdABkAAAAPAAEAAAAdABgAAAAQAAAAAAASAAUAAAAQAAEAAAASAAYAAAALAAAAAAASAAUAAAALAAEAAAASAAYAAAA=")
 tile_set = SubResource("TileSet_md8e1")
 collision_visibility_mode = 1
 
 [node name="Uma" parent="." unique_id=544586960 instance=ExtResource("3_md8e1")]
 
-[node name="GUI" parent="." unique_id=10680152 groups=["gui"] instance=ExtResource("4_epduf")]
+[node name="GUI" parent="." unique_id=10680152 instance=ExtResource("4_epduf")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=151594141]
+position = Vector2(528, 192)
+color = Color(0.07016479, 0.07016479, 0.07016479, 1)
+
+[node name="PointLight2D5" type="PointLight2D" parent="." unique_id=1499196041]
+position = Vector2(528, 40)
+color = Color(1, 1, 1, 0.7607843)
+energy = 1.5
+blend_mode = 2
+texture = ExtResource("5_epduf")
+texture_scale = 1.61
+
+[node name="PointLight2D2" type="PointLight2D" parent="PointLight2D5" unique_id=111285741]
+position = Vector2(0, 152)
+energy = 1.25
+blend_mode = 2
+texture = ExtResource("5_epduf")
+texture_scale = 1.5
+
+[node name="PointLight2D4" type="PointLight2D" parent="." unique_id=496054499]
+position = Vector2(368, 40)
+color = Color(1, 1, 1, 0.76100004)
+energy = 1.5
+blend_mode = 2
+texture = ExtResource("5_epduf")
+texture_scale = 1.61
+
+[node name="PointLight2D3" type="PointLight2D" parent="PointLight2D4" unique_id=1611049863]
+position = Vector2(0, 149)
+energy = 1.25
+blend_mode = 2
+texture = ExtResource("5_epduf")
+texture_scale = 1.5
