@@ -2,11 +2,13 @@ extends Node
 
 const RUTA_SAVE = "user://save.json"
 
+var habilitado = true
+
 var datos: Dictionary = {
 	"jugador": {
 		"escena_actual": "res://scenes/world/CuartoUma.tscn",
-		"posicion_x": 304,
-		"posicion_y": 208,
+		"posicion_x": 528,
+		"posicion_y": 144,
 		"ultima_direccion": "quietDown",
 	},
 	"ajustes": {

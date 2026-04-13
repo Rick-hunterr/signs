@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ct8mk0dp4kcnq" path="res://scripts/world/cuarto_uma.gd" id="1_6eb3c"]
 [ext_resource type="Texture2D" uid="uid://d4srkeg02ofd" path="res://assets/sprites/tilesets/interiorCasaUma.png" id="2_8wqq4"]
-[ext_resource type="PackedScene" uid="uid://b06wfxeyf2e0u" path="res://scenes/characters/Uma.tscn" id="3_fs34e"]
-[ext_resource type="PackedScene" uid="uid://dvbp2qisnaiqh" path="res://scenes/ui/GUI.tscn" id="4_md8e1"]
+[ext_resource type="PackedScene" uid="uid://b06wfxeyf2e0u" path="res://scenes/characters/Uma.tscn" id="3_md8e1"]
+[ext_resource type="PackedScene" uid="uid://dvbp2qisnaiqh" path="res://scenes/ui/GUI.tscn" id="4_epduf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_md8e1"]
 texture = ExtResource("2_8wqq4")
@@ -2018,12 +2018,6 @@ tile_map_data = PackedByteArray("AAARAAMAAAAeABIAAAARAAQAAAAeABMAAAAIAAYAAAAFACA
 tile_set = SubResource("TileSet_md8e1")
 collision_visibility_mode = 1
 
-[node name="Uma" parent="." unique_id=544586960 instance=ExtResource("3_fs34e")]
-position = Vector2(304, 208)
+[node name="Uma" parent="." unique_id=544586960 instance=ExtResource("3_md8e1")]
 
-[node name="GUI" parent="." unique_id=10680152 instance=ExtResource("4_md8e1")]
-
-[connection signal="boton_direccion_presionado" from="GUI" to="Uma" method="_on_direccion_presionada"]
-[connection signal="boton_direccion_soltado" from="GUI" to="Uma" method="_on_direccion_soltada"]
-[connection signal="boton_interactuar_presionado" from="GUI" to="Uma" method="_on_interactuar"]
-[connection signal="enviar_joystick" from="GUI" to="Uma" method="recibir_joystick"]
+[node name="GUI" parent="." unique_id=10680152 groups=["gui"] instance=ExtResource("4_epduf")]

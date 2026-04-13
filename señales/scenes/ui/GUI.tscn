@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bf42tbiggdkmn" path="res://assets/sprites/ui/dpad_element_west.png" id="6_b4y1k"]
 [ext_resource type="Texture2D" uid="uid://bbfj1skkod15r" path="res://assets/sprites/ui/MainMenu (1)/dpad_element_east.png" id="7_cqe8f"]
 
-[node name="GUI" type="CanvasLayer" unique_id=10680152]
+[node name="GUI" type="CanvasLayer" unique_id=10680152 groups=["gui"]]
 script = ExtResource("1_7hruu")
 
 [node name="Control" type="Control" parent="." unique_id=555638807]
@@ -45,13 +45,18 @@ offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="BtnInteractuar" type="TouchScreenButton" parent="Control/Control2" unique_id=950962497]
-position = Vector2(-81, 26)
+[node name="BtnInteractuar" type="Button" parent="Control/Control2" unique_id=1271693364]
+layout_mode = 0
+offset_left = -81.0
+offset_top = 26.0
+offset_right = -81.0
+offset_bottom = 26.0
 scale = Vector2(0.25, 0.25)
-texture_normal = ExtResource("3_3vknn")
+icon = ExtResource("3_3vknn")
+flat = true
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Control/Control2" unique_id=1747832476]
-position = Vector2(2, -164)
+position = Vector2(-8, -154)
 scale = Vector2(0.15, 0.15)
 texture_normal = ExtResource("4_b6ld1")
 

@@ -8,6 +8,7 @@ var joystick : Joystick = null
 @onready var camera = $Camera2D
 @onready var audio_pasos = $AudioPasos
 
+var en_dialogo: bool = false
 
 var dialogoCuartoUma = preload("res://scripts/dialogue/cuartoUma.dialogue")
 
@@ -35,23 +36,35 @@ var bump_offset: Vector2 = Vector2.ZERO
 var tilemap_objetos : TileMapLayer = null
 var TILES_INTERACTUABLES: Dictionary = {}
 
+
+
 func set_interactuables(datos: Dictionary) -> void:
 	TILES_INTERACTUABLES = datos
 
 func _ready():
 	camera.position_smoothing_enabled = false
-	camera_pos = global_position
-	
+
 	Ajustes.player = self
 	_aplicar_posicion_guardada()
+
+	camera_pos = global_position
+
+	# Forzar la cámara a la posición correcta ANTES del await
+	camera.position = Vector2.ZERO
+	camera.global_position = global_position
+
 	target_position = position
 	update_raycast()
+
 	await get_tree().process_frame
-	camera.position = Vector2.ZERO
+
+	# Después del await confirmar los límites
 	set_camera_limits()
 	tilemap_objetos = _buscar_tilemap("Objetos")
+
 	var gui = get_tree().get_first_node_in_group("gui")
 	if gui:
+		gui.boton_interactuar_presionado.connect(_on_interactuar)
 		gui.boton_direccion_presionado.connect(_on_direccion_presionada)
 		gui.boton_direccion_soltado.connect(_on_direccion_soltada)
 
@@ -118,17 +131,19 @@ func _physics_process(delta):
 		if gamepad_hold_time >= GAMEPAD_HOLD_THRESHOLD:
 			gamepad_holding = true
 
-	if moving:
-		move_to_target(delta)
-	else:
-		handle_input()
-
 	if bump_offset != Vector2.ZERO:
 		bump_offset = bump_offset.lerp(Vector2.ZERO, 0.3)
 		if bump_offset.length() < 0.5:
 			bump_offset = Vector2.ZERO
 		Uma.position = bump_offset
-
+		
+	if en_dialogo:
+		velocity = Vector2.ZERO # no moverse
+		return # no procesar input
+	if moving:
+		move_to_target(delta)
+	else:
+		handle_input()
 func _input(event):
 	if event.is_action_pressed("interact"):
 		_on_interactuar()
@@ -311,7 +326,6 @@ func resetear_control() -> void:
 	direction = Vector2.ZERO
 
 func _on_interactuar() -> void:
-	
 	ray_interact.force_raycast_update()
 	if ray_interact.is_colliding():
 		var obj = ray_interact.get_collider()
@@ -337,9 +351,15 @@ func _on_interactuar() -> void:
 		var datos = TILES_INTERACTUABLES[atlas_coords]
 		match datos["tipo"]:
 			"dialogo":
+				en_dialogo = true
 				DialogueManager.show_dialogue_balloon(dialogoCuartoUma, 'startCama')
+				await DialogueManager.dialogue_ended
+				en_dialogo = false
 			"mesaCuartoUma":
+				en_dialogo = true
 				DialogueManager.show_dialogue_balloon(dialogoCuartoUma, 'startMesa')
+				await DialogueManager.dialogue_ended
+				en_dialogo = false
 			"puerta":
 				guardar_posicion(datos["destino"])
 				Transition.play(datos["destino"])

@@ -9,13 +9,12 @@ func _ready() -> void:
 	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func play(target_scene: String, duration: float = 0.4) -> void:
-	print("Transition.play() llamado → ", target_scene)
 	color_rect.mouse_filter = Control.MOUSE_FILTER_STOP
 	await _fade(1.0, duration)
-	print("fade out terminado, cambiando escena")
 	get_tree().change_scene_to_file(target_scene)
+	await get_tree().process_frame
+	await get_tree().process_frame
 	await _fade(0.0, duration)
-	print("fade in terminado")
 	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	transition_finished.emit()
 

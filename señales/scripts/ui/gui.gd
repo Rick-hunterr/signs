@@ -14,7 +14,14 @@ signal boton_direccion_soltado
 @onready var btn_derecha   = $Control/BtnsDireccionales/BtnDerecha
 var ultimo_control: String = ""
 
+var puede_usar = true
+	
+
 func _ready() -> void:
+	var player = get_tree().get_first_node_in_group("uma")
+
+	if player:
+		enviar_joystick.connect(player.recibir_joystick)
 	
 	enviar_joystick.emit(joystick)
 	btn_interactuar.pressed.connect(_on_btn_interactuar_pressed)
@@ -29,7 +36,12 @@ func _ready() -> void:
 	actualizar_control()
 
 func _on_btn_interactuar_pressed() -> void:
+	if not puede_usar:
+		return
+	puede_usar = false
 	boton_interactuar_presionado.emit()
+	await get_tree().create_timer(1.0).timeout
+	puede_usar = true
 
 func _on_touch_screen_button_pressed() -> void:
 	Ajustes.abrir(true)

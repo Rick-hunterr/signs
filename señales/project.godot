@@ -50,6 +50,11 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
+[global_group]
+
+uma=""
+gui=""
+
 [input]
 
 debug_exit={
