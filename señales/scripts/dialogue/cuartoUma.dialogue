@@ -6,3 +6,33 @@ Tiene tres almohadas porque dos siempre terminan en el piso.
 ~ startMesa
 Mesa de estudio, no tengo tarea hoy.
 => END
+
+~ startPerchero
+Algunas cosas simplemente dejan de usarse.
+=> END
+
+~ startArmario
+Podría cambiarme… pero estoy bien así.
+=> END
+
+~ startEspejo
+Que lindos ojazos... Dio mio.
+=> END
+
+~ startObjetos
+Una mesa algo desordenada…
+Hay un cuaderno y unas llaves.
+
+- Revisar cuaderno
+	Uma: Un cuaderno con algunas notas…
+	Uma: Podría servirme.
+	=> END
+
+- Tomar llaves
+	Uma: Unas llaves… no recuerdo de qué son.
+	Uma: Mejor las llevo.
+	=> END
+
+- Dejar todo
+	Uma: Mejor no tocar nada.
+	=> END

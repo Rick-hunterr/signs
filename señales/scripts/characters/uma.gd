@@ -219,7 +219,9 @@ func set_direction(dir, anim, idle_anim):
 	update_raycast()
 
 func start_move():
-	
+	if audio_pasos.stream != null:
+		pass
+		audio_pasos.play()
 	update_raycast()
 	ray.force_raycast_update()
 	if ray.is_colliding():
@@ -227,9 +229,6 @@ func start_move():
 		return
 	moving = true
 	target_position = position + direction * TILE_SIZE
-	if audio_pasos.stream != null:
-		pass
-		audio_pasos.play()
 
 func move_to_target(_delta):
 	var diff = target_position - position
@@ -360,6 +359,28 @@ func _on_interactuar() -> void:
 				DialogueManager.show_dialogue_balloon(dialogoCuartoUma, 'startMesa')
 				await DialogueManager.dialogue_ended
 				en_dialogo = false
+			"perchero":
+				en_dialogo = true
+				DialogueManager.show_dialogue_balloon(dialogoCuartoUma, 'startPerchero')
+				await DialogueManager.dialogue_ended
+				en_dialogo = false
+			"armario":
+				en_dialogo = true
+				DialogueManager.show_dialogue_balloon(dialogoCuartoUma, 'startArmario')
+				await DialogueManager.dialogue_ended
+				en_dialogo = false
+			"espejo":
+				en_dialogo = true
+				DialogueManager.show_dialogue_balloon(dialogoCuartoUma, 'startEspejo')
+				await DialogueManager.dialogue_ended
+				en_dialogo = false
+			"objetos":
+				en_dialogo = true
+				DialogueManager.show_dialogue_balloon(dialogoCuartoUma, 'startObjetos')
+				await DialogueManager.dialogue_ended
+				en_dialogo = false
+				
+				
 			"puerta":
 				guardar_posicion(datos["destino"])
 				Transition.play(datos["destino"])
