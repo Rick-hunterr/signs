@@ -5,6 +5,9 @@ const RUTA_SAVE = "user://save.json"
 var habilitado = true
 
 var datos: Dictionary = {
+	"cuartoUma": {
+		"luz": true,
+	},
 	"jugador": {
 		"escena_actual": "res://scenes/world/CuartoUma.tscn",
 		"posicion_x": 528,
@@ -117,3 +120,9 @@ func get_progreso(clave: String):
 
 func set_progreso(clave: String, valor) -> void:
 	datos["progreso"][clave] = valor
+	
+func set_cuarto(clave: String, valor) -> void:
+	datos["cuartoUma"][clave] = valor
+	
+func get_cuarto(clave: String):
+	return datos["cuartoUma"].get(clave)

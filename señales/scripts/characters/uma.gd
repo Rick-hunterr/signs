@@ -7,6 +7,8 @@ var joystick : Joystick = null
 @onready var ray_interact = $RayCast2DInteracts
 @onready var camera = $Camera2D
 @onready var audio_pasos = $AudioPasos
+@onready var nodoLevel
+@onready var nodoLevel2
 
 var en_dialogo: bool = false
 
@@ -36,7 +38,7 @@ var bump_offset: Vector2 = Vector2.ZERO
 var tilemap_objetos : TileMapLayer = null
 var TILES_INTERACTUABLES: Dictionary = {}
 
-
+var varLevel
 
 func set_interactuables(datos: Dictionary) -> void:
 	TILES_INTERACTUABLES = datos
@@ -82,6 +84,8 @@ func _aplicar_posicion_guardada() -> void:
 		position = Vector2(pos_x, pos_y)
 		lastDirection = ultima_dir
 		print("Posición aplicada: ", position)
+	
+	
 
 func _on_direccion_presionada(dir: Vector2) -> void:
 	direccion_gamepad = dir
@@ -225,6 +229,7 @@ func start_move():
 	update_raycast()
 	ray.force_raycast_update()
 	if ray.is_colliding():
+		audio_pasos.stop()
 		bump_offset = direction * 6
 		return
 	moving = true
@@ -241,6 +246,7 @@ func move_to_target(_delta):
 		Uma.position = Vector2.ZERO
 		quietAnimation()
 		_detectar_tile_actual()
+		
 	else:
 		# Mover directo por position, redondeado a entero para evitar subpíxeles
 		position += diff.normalized() * step
@@ -315,9 +321,14 @@ func guardar_posicion(escena_destino: String) -> void:
 	SaveManager.set_jugador("posicion_x", position.x)
 	SaveManager.set_jugador("posicion_y", position.y)
 	SaveManager.set_jugador("ultima_direccion", lastDirection)
-	SaveManager.guardar()
+	
 	print("Datos guardados: ", SaveManager.datos["jugador"])
-
+	
+	#guardar estado luz
+	SaveManager.set_cuarto("luz", varLevel)
+	
+	SaveManager.guardar()
+	
 func resetear_control() -> void:
 	direccion_gamepad = Vector2.ZERO
 	gamepad_holding = false
@@ -379,7 +390,20 @@ func _on_interactuar() -> void:
 				DialogueManager.show_dialogue_balloon(dialogoCuartoUma, 'startObjetos')
 				await DialogueManager.dialogue_ended
 				en_dialogo = false
+			"tecla":
 				
+				varLevel = SaveManager.get_cuarto("luz")
+				
+				if varLevel == false:
+					nodoLevel.visible = true
+					nodoLevel2.visible = true
+					varLevel = true
+					SaveManager.set_cuarto("luz", varLevel)
+				elif varLevel == true:
+					nodoLevel.visible = false
+					nodoLevel2.visible = false
+					varLevel = false
+					SaveManager.set_cuarto("luz", varLevel)
 				
 			"puerta":
 				guardar_posicion(datos["destino"])
@@ -406,8 +430,18 @@ func cargar_posicion() -> void:
 		target_position = position
 		lastDirection = ultima_dir
 		print("Posición cargada: ", position)
+	
 
 func btnGuardar() -> void:
 	var escena_actual = get_tree().current_scene.scene_file_path
 	guardar_posicion(escena_actual)
 	print("guardada")
+
+func recibirNodo(nodo1, nodo2):
+	nodoLevel = nodo1
+	nodoLevel2 = nodo2
+	
+	varLevel = SaveManager.get_cuarto("luz")
+	print(varLevel)
+	nodoLevel.visible = varLevel
+	nodoLevel2.visible = varLevel

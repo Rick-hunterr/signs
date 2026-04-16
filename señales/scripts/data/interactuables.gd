@@ -8,6 +8,7 @@ const CUARTO_UMA: Dictionary = {
 	Vector2i(20, 20): {"tipo": "armario", "texto": "Podría cambiarme… pero estoy bien así."},
 	Vector2i(26, 51): {"tipo": "espejo", "texto": "Que lindos ojazos... Dio mio."},
 	Vector2i(22, 54): {"tipo": "objetos", "texto": "Mesa de objetos"},
+	Vector2i(26, 55): {"tipo": "tecla", "texto": "interruptor de la luz"},
 	
 	Vector2i(5, 32): {"tipo": "puerta", "destino": "res://scenes/world/sala.tscn"},
 }
