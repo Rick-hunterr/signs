@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coaqwm6i68ye1"
-path="res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"
+uid="uid://ditfvnfxqd2e2"
+path="res://.godot/imported/SENALES_flujo_narrativo.png-79ea517fbb140840e7114027533786bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/banner/banner.png"
-dest_files=["res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"]
+source_file="res://docs/mapa/SENALES_flujo_narrativo.png"
+dest_files=["res://.godot/imported/SENALES_flujo_narrativo.png-79ea517fbb140840e7114027533786bb.ctex"]
 
 [params]
 

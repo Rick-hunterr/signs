@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coaqwm6i68ye1"
-path="res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"
+uid="uid://cq8bquy0ejx3u"
+path="res://.godot/imported/SENALES_maqueta_reves.png-726e4d730e03e1cf646d24d617f05632.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/banner/banner.png"
-dest_files=["res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"]
+source_file="res://docs/mapa/SENALES_maqueta_reves.png"
+dest_files=["res://.godot/imported/SENALES_maqueta_reves.png-726e4d730e03e1cf646d24d617f05632.ctex"]
 
 [params]
 

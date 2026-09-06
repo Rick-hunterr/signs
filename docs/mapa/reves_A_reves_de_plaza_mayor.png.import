@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coaqwm6i68ye1"
-path="res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"
+uid="uid://cuh558jvlqp1g"
+path="res://.godot/imported/reves_A_reves_de_plaza_mayor.png-bb4cd6f0121e697e5a73cd0fc7d9565a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/banner/banner.png"
-dest_files=["res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"]
+source_file="res://docs/mapa/reves_A_reves_de_plaza_mayor.png"
+dest_files=["res://.godot/imported/reves_A_reves_de_plaza_mayor.png-bb4cd6f0121e697e5a73cd0fc7d9565a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coaqwm6i68ye1"
-path="res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"
+uid="uid://bi30jhnuxajp1"
+path="res://.godot/imported/interludio_V_tres_semanas.png-9b7837bf625121b1485c028d0b7ca752.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/banner/banner.png"
-dest_files=["res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"]
+source_file="res://docs/mapa/interludio_V_tres_semanas.png"
+dest_files=["res://.godot/imported/interludio_V_tres_semanas.png-9b7837bf625121b1485c028d0b7ca752.ctex"]
 
 [params]
 

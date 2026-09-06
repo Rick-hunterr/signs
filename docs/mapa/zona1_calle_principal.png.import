@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coaqwm6i68ye1"
-path="res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"
+uid="uid://cyql4h5sgrghh"
+path="res://.godot/imported/zona1_calle_principal.png-e1ace8da6c94e4739935ff426090bf0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/banner/banner.png"
-dest_files=["res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"]
+source_file="res://docs/mapa/zona1_calle_principal.png"
+dest_files=["res://.godot/imported/zona1_calle_principal.png-e1ace8da6c94e4739935ff426090bf0c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coaqwm6i68ye1"
-path="res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"
+uid="uid://ca41uflkky6no"
+path="res://.godot/imported/zona2_plaza_mayor.png-2d342cd78158c71269639f6035683aaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/banner/banner.png"
-dest_files=["res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"]
+source_file="res://docs/mapa/zona2_plaza_mayor.png"
+dest_files=["res://.godot/imported/zona2_plaza_mayor.png-2d342cd78158c71269639f6035683aaa.ctex"]
 
 [params]
 

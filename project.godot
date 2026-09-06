@@ -16,11 +16,11 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="señales"
 run/main_scene="uid://dpveku8phk5v5"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 run/low_processor_mode=true
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="uid://b1wrrnxg8fj75"
 config/icon="uid://wwop4yx16iah"
+boot_splash/image="uid://b1wrrnxg8fj75"
 
 [audio]
 
@@ -46,7 +46,7 @@ window/size/viewport_height=384
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/aspect="ignore"
 
 [editor_plugins]
 
@@ -100,6 +100,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
+rendering/root_node_layout_direction=1
 locale/translations_pot_files=PackedStringArray("res://scripts/dialogue/cuartoUma.dialogue")
 
 [rendering]

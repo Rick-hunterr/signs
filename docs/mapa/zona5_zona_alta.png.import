@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coaqwm6i68ye1"
-path="res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"
+uid="uid://doiemyrm541f7"
+path="res://.godot/imported/zona5_zona_alta.png-826b472e01391fb35b66ee537d3ecb14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/banner/banner.png"
-dest_files=["res://.godot/imported/banner.png-f9e4be6272c7a5d1430ed39f4f6514f5.ctex"]
+source_file="res://docs/mapa/zona5_zona_alta.png"
+dest_files=["res://.godot/imported/zona5_zona_alta.png-826b472e01391fb35b66ee537d3ecb14.ctex"]
 
 [params]
 

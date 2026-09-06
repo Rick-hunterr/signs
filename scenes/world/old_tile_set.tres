@@ -1,13 +1,9 @@
-[gd_scene format=4 uid="uid://24b7pyakduy2"]
+[gd_resource type="TileSet" format=3 uid="uid://dp0tiejcos68o"]
 
-[ext_resource type="Script" uid="uid://ce104bkqgiju5" path="res://scripts/world/sala.gd" id="1_vvnss"]
-[ext_resource type="Texture2D" uid="uid://d4srkeg02ofd" path="res://assets/sprites/tilesets/interiorCasaUma.png" id="1_xb0j2"]
-[ext_resource type="PackedScene" uid="uid://dvbp2qisnaiqh" path="res://scenes/ui/GUI.tscn" id="3_vvnss"]
-[ext_resource type="PackedScene" uid="uid://b06wfxeyf2e0u" path="res://scenes/characters/Uma.tscn" id="4_opecc"]
-[ext_resource type="TileSet" uid="uid://uhfke8i2umrp" path="res://scenes/world/test_tile/32px_test_tile_set.tres" id="5_opecc"]
+[ext_resource type="Texture2D" uid="uid://d4srkeg02ofd" path="res://assets/sprites/tilesets/interiorCasaUma.png" id="1_1trxh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vvnss"]
-texture = ExtResource("1_xb0j2")
+texture = ExtResource("1_1trxh")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -1989,45 +1985,20 @@ texture_region_size = Vector2i(32, 32)
 5:32/0 = 0
 5:32/0/custom_data_0 = "PuertaUma"
 5:32/1 = 1
-13:33/0 = 0
 14:33/0 = 0
+13:33/0 = 0
 26:22/next_alternative_id = 2
 26:22/0 = 0
 26:22/0/custom_data_0 = "cuartoUma"
 26:22/1 = 1
 26:22/1/custom_data_0 = "cuartoUma"
 26:23/0 = 0
-26:24/0 = 0
 27:23/0 = 0
+26:24/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_opecc"]
+[resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 custom_data_layer_0/name = "tipo"
 custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_vvnss")
-
-[node name="Sala" type="Node2D" unique_id=2142440359]
-script = ExtResource("1_vvnss")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1313205093]
-tile_map_data = PackedByteArray("AAAKAAMAAAADAAQAAAAKAAQAAAADAAQAAAAKAAUAAAADAAQAAAAKAAYAAAADAAQAAAAKAAcAAAADAAQAAAALAAMAAAADAAQAAAALAAQAAAADAAQAAAALAAUAAAADAAQAAAALAAYAAAADAAQAAAALAAcAAAADAAQAAAAMAAMAAAADAAQAAAAMAAQAAAADAAQAAAAMAAYAAAADAAQAAAAMAAcAAAADAAQAAAANAAMAAAADAAQAAAANAAQAAAADAAQAAAANAAUAAAADAAQAAAANAAYAAAADAAQAAAANAAcAAAADAAQAAAAOAAMAAAADAAQAAAAOAAQAAAADAAQAAAAOAAUAAAADAAQAAAAOAAYAAAADAAQAAAAJAAUAAAADAAQAAAAJAAYAAAADAAQAAAAJAAcAAAADAAQAAAAIAAYAAAADAAQAAAAJAAQAAAADAAQAAAAOAAEAAAADAAAAAAAOAAAAAAADAAAAAAANAAAAAAADAAAAAAANAAEAAAADAAAAAAAMAAEAAAADAAAAAAALAAEAAAADAAAAAAAKAAEAAAADAAAAAAAKAAAAAAADAAAAAAALAAAAAAADAAAAAAAMAAAAAAADAAAAAAASAAAAAAAEAAAAABASAAEAAAAEAAAAABAPAAEAAAADAAAAAAAQAAEAAAADAAAAAAARAAEAAAADAAAAAAARAAAAAAADAAAAAAAQAAAAAAADAAAAAAAPAAAAAAADAAAAAAAPAAMAAAADAAQAAAAQAAMAAAADAAQAAAASAAMAAAADAAQAAAASAAQAAAADAAQAAAAQAAQAAAADAAQAAAAPAAQAAAADAAQAAAAPAAUAAAADAAQAAAAOAAcAAAADAAQAAAAPAAcAAAADAAQAAAAQAAcAAAADAAQAAAARAAcAAAADAAQAAAASAAcAAAADAAQAAAASAAYAAAADAAQAAAASAAUAAAADAAQAAAARAAUAAAADAAQAAAAQAAUAAAADAAQAAAAPAAYAAAADAAQAAAAQAAYAAAADAAQAAAARAAYAAAADAAQAAAASAAgAAAADAAQAAAARAAgAAAADAAQAAAAQAAgAAAADAAQAAAALAAgAAAADAAQAAAAKAAgAAAADAAQAAAAJAAgAAAADAAQAAAAMAAgAAAADAAQAAAANAAgAAAADAAQAAAAOAAgAAAADAAQAAAAPAAgAAAADAAQAAAARAAQAAAADAAQAAAAJAAMAAAADAAQAAAAJAAAAAAAEAAAAAAAJAAEAAAAEAAAAAAARAAMAAAADAAQAAAAJAAIAAAAIAAAAAAAKAAIAAAAHAAAAAAALAAIAAAAHAAAAAAAMAAIAAAAHAAAAAAANAAIAAAAHAAAAAAAOAAIAAAAHAAAAAAAPAAIAAAAHAAAAAAAQAAIAAAAHAAAAAAARAAIAAAAHAAAAAAASAAIAAAAIAAAAABAMAAUAAAADAAQAAAA=")
-tile_set = SubResource("TileSet_opecc")
-collision_visibility_mode = 1
-
-[node name="colisiones" type="TileMapLayer" parent="." unique_id=1528937073]
-tile_map_data = PackedByteArray("AAAQAAIAAAAdADMAAgAPAAIAAAAdADMAAgAOAAIAAAAdADMAAgANAAIAAAAdADMAAgAMAAIAAAAdADMAAgALAAIAAAAdADMAAgAKAAIAAAAdADMAAgAJAAIAAAAdADMAAgAIAAMAAAAdADMAAgAIAAQAAAAdADMAAgAIAAUAAAAdADMAAgAIAAcAAAAdADMAAgAIAAgAAAAdADMAAgAHAAYAAAAdADMAAgARAAQAAAAdADMAAgARAAMAAAAdADMAAgARAAIAAAAdADMAAgASAAIAAAAdADMAAgATAAMAAAAdADMAAgATAAQAAAAdADMAAgATAAUAAAAdADMAAgATAAYAAAAdADMAAgATAAcAAAAdADMAAgATAAgAAAAdADMAAgASAAkAAAAdADMAAgARAAkAAAAdADMAAgAJAAkAAAAdADMAAgAKAAkAAAAdADMAAgALAAkAAAAdADMAAgAMAAkAAAAdADMAAgANAAkAAAAdADMAAgAQAAkAAAAdADMAAgAPAAkAAAAdADMAAgAOAAkAAAAdADMAAgA=")
-tile_set = SubResource("TileSet_opecc")
-collision_visibility_mode = 1
-
-[node name="Objetos" type="TileMapLayer" parent="." unique_id=1097093403]
-tile_map_data = PackedByteArray("AAARAAMAAAAeABIAAAARAAQAAAAeABMAAAAIAAYAAAAaABYAAQAHAAYAAAAaABYAAQA=")
-tile_set = SubResource("TileSet_opecc")
-collision_visibility_mode = 1
-
-[node name="GUI" parent="." unique_id=10680152 instance=ExtResource("3_vvnss")]
-
-[node name="Uma" parent="." unique_id=544586960 instance=ExtResource("4_opecc")]
-
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1613609312]
-tile_set = ExtResource("5_opecc")
