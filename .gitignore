@@ -70,3 +70,13 @@ desktop.ini
 #  Confusión típica: .godot/ NO va, pero *.import SÍ.
 #  Uno es caché regenerable, el otro es metadata necesaria.
 # ═══════════════════════════════════════════════════════
+
+# Audio de producción — no van al repo
+audio/stems/*.wav
+audio/experiments/*.wav
+audio/archive/*.wav
+audio/source/*.mp3
+audio/**/*.npy
+audio/**/*.json
+audio/**/venv/
+audio/**/__pycache__/
