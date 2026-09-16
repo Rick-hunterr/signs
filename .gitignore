@@ -70,3 +70,5 @@ desktop.ini
 #  Confusión típica: .godot/ NO va, pero *.import SÍ.
 #  Uno es caché regenerable, el otro es metadata necesaria.
 # ═══════════════════════════════════════════════════════
+.godot/
+*.import
